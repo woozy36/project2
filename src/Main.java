@@ -7,12 +7,11 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
 
-        ArrayList<String> myTasks = new ArrayList<>();
-
-        myTasks.add("huh?");
+        ArrayList<Task> myTasks = new ArrayList<>();
 
 
-
+        Task asimpletest = new Task("cat", "walk the cat", 5);
+        System.out.println(asimpletest);
 
 
 
@@ -34,9 +33,20 @@ public class Main {
 
 
             if (option.equals("1")) {
-                System.out.println("what do you want to add");
-                String newTask = input.nextLine();
-                myTasks.add(newTask);
+                System.out.println("what task name");
+                String taskName = input.nextLine();
+
+                System.out.println("give a description of the task");
+                String taskDescription = input.nextLine();
+
+                System.out.println("give a priority for the task");
+                int taskPriority = input.nextInt();
+                input.nextLine();
+
+                Task theNewTask = new Task(taskName, taskDescription, taskPriority);
+                myTasks.add(theNewTask);
+
+
 
 
             }
@@ -51,8 +61,9 @@ public class Main {
                 System.out.println("what task do you want to update");
                 String update = input.nextLine();
                 System.out.println("what do you want to replace it with");
-                String selectThing = input.nextLine();
-                myTasks.set(Integer.parseInt(update), selectThing);
+
+
+
 
             }
             else if (option.equals("4")) {
